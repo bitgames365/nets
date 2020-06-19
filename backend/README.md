@@ -63,7 +63,7 @@
 
    }
 
-   ![image-20200619153620635](F:\AKNets\nets\backend\image-20200619153620635.png)
+   ![image-20200619153620635](https://github.com/bitgames365/nets/blob/master/backend/image-20200619153458368.png)
 
 7. 登录的时候记得带上token
 
