@@ -1,3 +1,5 @@
+### 新建项目
+
 1. 安装nestjs
 
    npm i -g @nestjs/cli
@@ -6,7 +8,9 @@
 
    nest new netserve
 
-3. 安装OpenAPI
+### 安装seagger
+
+1. 安装OpenAPI
 
    npm install --save @nestjs/swagger swagger-ui-express 
 
@@ -34,7 +38,9 @@
    bootstrap();
    ```
 
-4. 安装passport模块
+### 安装登录验证模块
+
+1. 安装passport模块
 
    ```bash
    $ npm install --save @nestjs/passport passport passport-local
@@ -43,9 +49,9 @@
    $ npm i passport-jwt
    ```
 
-5. nest上面的例子拷贝过来
+2. nest上面的例子拷贝过来
 
-6. 测试
+3. 测试
 
    postman输入：
 
@@ -65,13 +71,19 @@
 
    ![image-20200619153620635](F:\AKNets\nets\backend\image-20200619153620635.png)
 
-7. 登录的时候记得带上token
+4. 登录的时候记得带上token
 
    ![image-20200619153458368](F:\AKNets\nets\backend\image-20200619153458368.png)
 
-8. 登录验证模块基本完成
+5. 登录验证模块基本完成
 
+### TypeOrm的集成
 
+[官网手册](https://typeorm.io/#/)
+
+```typescript
+ npm install --save @nestjs/typeorm typeorm mysql
+```
 
 
 
