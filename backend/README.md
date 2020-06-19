@@ -69,11 +69,11 @@
 
    }
 
-   ![image-20200619153620635](F:\AKNets\nets\backend\image-20200619153620635.png)
+   ![image-20200619153620635](https://github.com/bitgames365/nets/blob/master/backend/image-20200619153620635.png)
 
 4. 登录的时候记得带上token
 
-   ![image-20200619153458368](F:\AKNets\nets\backend\image-20200619153458368.png)
+   ![image-20200619153458368](https://github.com/bitgames365/nets/blob/master/backend/image-20200619153458368.png)
 
 5. 登录验证模块基本完成
 
