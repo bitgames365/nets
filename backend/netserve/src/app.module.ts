@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { TaskModule } from './task/task.module';
+import { DeviceModule } from './device/device.module';
 
 @Module({
   imports: [
@@ -14,10 +15,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: '123456',
       database: 'nets',
-      entities: [],
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
-    }),
-    AuthModule, UsersModule],
+    }), UsersModule, TaskModule, DeviceModule],
   controllers: [AppController],
   providers: [AppService],
 })
