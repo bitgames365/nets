@@ -1,6 +1,7 @@
-import { Column, Entity, OneToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm';
-import { Exclude } from 'class-transformer'
+import { Column, Entity, OneToOne, JoinColumn, PrimaryGeneratedColumn, JoinTable, ManyToMany } from 'typeorm';
 import { User } from './user.entity'
+import { Device } from './device.entity'
+
 
 @Entity()
 export class Task {
@@ -37,4 +38,8 @@ export class Task {
   @OneToOne(type => User)
   @JoinColumn()
   author: User;
+
+  @ManyToMany(type => Device)
+  @JoinTable()
+  categories: Device[];
 }

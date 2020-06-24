@@ -53,4 +53,10 @@ export class UsersService {
       access_token: this.jwtService.sign(payload),
     };
   }
+
+  async logout() {
+    return {
+      logout: "success"
+    };
+  }
 }

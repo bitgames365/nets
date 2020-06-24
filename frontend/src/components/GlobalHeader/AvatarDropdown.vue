@@ -1,7 +1,7 @@
 <template>
   <a-dropdown v-if="currentUser && currentUser.name" placement="bottomRight">
     <span class="ant-pro-account-avatar">
-      <a-avatar size="small" v-bind:src="getImages()" class="antd-pro-global-header-index-avatar" />
+      <a-avatar size="small" :src="avatar" class="antd-pro-global-header-index-avatar" />
       <span>{{ currentUser.name }}</span>
     </span>
     <template v-slot:overlay>
@@ -36,12 +36,16 @@ export default {
   props: {
     currentUser: {
       type: Object,
-      avatar: avatar,
       default: () => null
     },
     menu: {
       type: Boolean,
       default: true
+    }
+  },
+  data () {
+    return {
+       avatar: avatar
     }
   },
   methods: {
@@ -65,13 +69,8 @@ export default {
         },
         onCancel () {}
       })
-    },
-    getImages () {
-      return '../../../assets/logo.png'
     }
-
   }
-
 }
 </script>
 

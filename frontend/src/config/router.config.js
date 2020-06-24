@@ -8,7 +8,6 @@ const RouteView = {
 }
 
 export const asyncRouterMap = [
-
   {
     path: '/',
     name: 'index',
