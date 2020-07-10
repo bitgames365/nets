@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TaskModule } from './task/task.module';
 import { DeviceModule } from './device/device.module';
+import { ResultModule } from './result/result.module';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { DeviceModule } from './device/device.module';
       database: 'nets',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
-    }), UsersModule, TaskModule, DeviceModule],
+    }), UsersModule, TaskModule, DeviceModule, ResultModule],
   controllers: [AppController],
   providers: [AppService],
 })

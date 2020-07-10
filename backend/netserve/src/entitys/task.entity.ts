@@ -41,5 +41,5 @@ export class Task {
 
   @ManyToMany(type => Device)
   @JoinTable()
-  categories: Device[];
+  devices: Device[];
 }

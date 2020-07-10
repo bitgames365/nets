@@ -1,12 +1,13 @@
 import { Controller,  Get, Post, Body, Request, UseGuards, ValidationPipe} from '@nestjs/common';
 import { UsersService } from './users.service';
-import { JwtAuthGuard } from './guards/jwt-auth.guard';
-import { LocalAuthGuard } from './guards/local-auth.guard';
+import { JwtAuthGuard } from '../comm/guards/jwt-auth.guard';
+import { LocalAuthGuard } from '../comm/guards/local-auth.guard';
 import { CreateUserDto } from './dto/create-user.dto';
 import { LoginUserDto } from './dto/login-user.dto'
-import { ApiOperation, ApiBearerAuth } from '@nestjs/swagger'
+import { ApiOperation, ApiBearerAuth, ApiTags } from '@nestjs/swagger'
 
 @Controller("user")
+@ApiTags("用户接口")
 export class UsersController {
   constructor(
     private readonly userService: UsersService
@@ -38,24 +39,6 @@ export class UsersController {
   @ApiOperation({summary: '获取用户配置'})
   @UseGuards(JwtAuthGuard)
   getProfile(@Request() req) {
-    //return this.userService.findOneByAccount(req.user.username)
-    
-    return {
-      'id': '4291d7da9005377ec9aec4a71ea837f',
-      'name': 'bbb',
-      'username': 'admin',
-      'password': '',
-      'avatar': '/avatar2.jpg',
-      'status': 1,
-      'telephone': '',
-      'lastLoginIp': '27.154.74.117',
-      'lastLoginTime': 1534837621348,
-      'creatorId': 'admin',
-      'createTime': 1497160610259,
-      'merchantCode': 'TLif2btpzg079h15bk',
-      'deleted': 0,
-      'roleId': 'admin',
-      'role': {}
-    };
+    return this.userService.findOneByAccount(req.user.username)
   }
 }

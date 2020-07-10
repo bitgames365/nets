@@ -1,5 +1,4 @@
-import { IsString, IsNotEmpty, MinLength, MaxLength, Matches, IsNumber } from 'class-validator'
-import { Match } from '../../comm/decorator/match.docorator'
+import { IsString, IsNotEmpty, MinLength, MaxLength, Matches, IsNumber, IsArray } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
 export class CreateTaskDto {
@@ -27,7 +26,7 @@ export class CreateTaskDto {
         uniqueItems: true,
     })
     @IsNumber()
-    @IsNotEmpty({ message: '描述不能为空' })
+    @IsNotEmpty({ message: '任务类型' })
     type: number;
 
     @ApiProperty({
@@ -35,6 +34,13 @@ export class CreateTaskDto {
         uniqueItems: true,
     })
     @IsNumber()
-    @IsNotEmpty({ message: '描述不能为空' })
+    @IsNotEmpty({ message: '是否是子任务' })
     level: number;
+
+    @ApiProperty({
+        description: '设备列表',
+        uniqueItems: true,
+    })
+    @IsArray()
+    devices: number[];
 }
